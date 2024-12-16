@@ -1,0 +1,57 @@
+.input-file {
+  display: grid;
+  gap: .75rem;
+  grid-template-columns: 1fr;
+  align-items: center;
+
+  & label {
+    color: var(--text-body);
+    font: var(--text-sm);
+
+    grid-row: 1/2;
+
+  }
+
+
+  & .wrapper-file-input {
+    grid-row: 2/3;
+    background-color: var(--input-base);
+    height: 2.5rem;
+    border-radius: .5rem;
+    display: flex;
+    gap: .5rem;
+    position: relative;
+    align-items: center;
+    padding: .75rem;
+
+    & p {
+      color: var(--text-heading);
+      font: var(--text-sm);
+    }
+
+    & svg {
+      color: var(--input-stroke);
+    }
+  }
+
+  & .wrapper-file-input:hover {
+    & svg {
+      color: var(--brand-light);
+    }
+  }
+
+  & input {
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  & p {
+    grid-row: 2/3;
+    color: var(--input-placeholder);
+  }
+
+}

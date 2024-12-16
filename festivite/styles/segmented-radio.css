@@ -1,0 +1,62 @@
+.input-radio {
+
+  
+  & span {
+    color: var(--text-body);
+  }
+  
+  & span + .segmented-input {
+    margin-top: .75rem;
+  }
+  
+  & .segmented-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .25rem;
+    border-radius: .5rem;
+    border: 1px solid var(--input-stroke);
+    background-color: var(--input-base);
+    font: var(--text-sm);
+    color: var(--text-body);
+    padding: .25rem;
+  }
+
+  & .input-inner {
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+    padding: .625rem 1.125rem;
+    position: relative;
+
+    & svg {
+      width: 1rem;
+      height: 1rem;
+      color: var(--input-placeholder);
+    }
+
+    & input,
+    & input:focus,
+    & input:hover {
+      all: unset;
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus-within {
+      background-color: var(--shape-button);
+
+      & svg {
+        color: #59B2FF;
+      }
+    }
+
+    &:has(:checked) {
+      background-color: var(--shape-button);
+      & svg {
+        color: #59B2FF;
+      }
+    }
+  }
+}

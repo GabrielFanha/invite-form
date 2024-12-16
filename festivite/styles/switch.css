@@ -1,0 +1,96 @@
+.input-switch {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+
+  & label:nth-child(1) {
+    color: var(--text-body);
+    font: var(--text-sm);
+  }
+
+  & .toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    max-width: 7.5rem;
+
+    & .toggle-switch {
+      display: none;
+    }
+
+    & .toggle-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      width: 4rem;
+      height: 2rem;
+      background: var(--input-base);
+      border-radius: 999px;
+      border: 1px solid var(--input-stroke);
+      position: relative;
+      padding: .25rem; 
+      transition: background 0.3s ease;
+    }
+
+    & .toggle-label::after {
+      content: '';
+      position: absolute;
+      width: 1.5rem;
+      height: 1.5rem;
+      background: var(--input-stroke);
+      border-radius: 50%;
+      transition: transform 0.3s ease;
+      left: .25rem;
+    }
+
+    & .toggle-text {
+      display: inline;
+      color: var(--text-heading);
+      pointer-events: none;
+      position: absolute;
+      z-index: 3;
+    }
+    
+    & .toggle-text.on {
+      right: -3rem;
+    }
+    
+    & .toggle-text.off {
+      right: -3.25rem;
+    }
+    
+    /* Checkbox marcado (ON) */
+    & .toggle-switch:checked + .toggle-label {
+      background:  var(--brand-light);
+    }
+    
+    & .toggle-switch:checked + .toggle-label::after {
+      transform: translateX(2rem);
+      background-color: var(--text-heading);
+    }
+
+    .toggle-switch:checked + .toggle-label .toggle-text.on {
+      visibility: visible;
+    }
+
+    .toggle-switch:checked + .toggle-label .toggle-text.off {
+      visibility: hidden;
+    }
+    
+    .toggle-switch:not(:checked) + .toggle-label .toggle-text.off {
+      visibility: visible;
+    }
+
+    .toggle-switch:not(:checked) + .toggle-label .toggle-text.on {
+      visibility: hidden;
+    }
+    
+
+  }
+
+  
+
+
+}

@@ -1,0 +1,56 @@
+.input-grid-radio {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+
+  & label:nth-child(1) {
+    color: var(--text-body);
+    font: var(--text-sm);
+  }
+
+  & .container-radio {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+  }
+
+  & .card-radio {
+    max-width: 8.375rem;
+    background-color:  var(--shape-button);
+    outline: 1px solid var(--input-stroke);
+    border-radius: .5rem;
+    padding: .25rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    & img {
+      width: 7.875rem;
+      height: 4rem;
+      border-radius: .25rem;
+    }
+    & label {
+      color: var(--text-heading);
+      margin: .25rem;
+      margin-inline: auto;
+    }
+    & input,
+    & input:focus,
+    & input:hover {
+      all: unset;
+      position: absolute;
+      inset: 0;
+    }
+
+    &:focus-within {
+      outline: 2px solid var(--brand-light);
+    }
+
+    &:has(:checked) {
+      outline: 2px solid var(--brand-light);
+    }
+
+  }
+
+
+}

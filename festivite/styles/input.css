@@ -1,0 +1,47 @@
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+
+  & label {
+    color: var(--text-body);
+    font: var(--text-sm);
+  }
+
+  & input, textarea {
+    appearance: none;
+    width: 100%;
+    border-radius: .5rem;
+    border: 1px solid var(--input-stroke);
+    padding: .75rem 1rem;
+    font: var(--text-md);
+    background-color: var(--input-base);
+    box-shadow: none;
+    outline: none;
+    color: var(--text-heading);
+  }
+
+  & input:focus, 
+  textarea:focus {
+    border: 1px solid var(--brand-light);
+  }
+
+  & input {
+    &:invalid{
+      border: 1px solid var(--danger);
+    }
+  
+    &[required] + .error {
+      
+
+
+
+    }
+  
+    &:not(:focus):valid + .error {
+      display: none;
+    }
+  }
+
+
+}
